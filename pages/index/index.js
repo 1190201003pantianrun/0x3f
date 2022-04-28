@@ -19,6 +19,7 @@ Page({
     that.changeMarkerColor(markersData,id);
   },
   onLoad: function() {
+    wx.cloud.init();
     var that = this;
     var myAmapFun = new amapFile.AMapWX({key:'42a59697868323c73bbf7ff60d7f831d'});
     myAmapFun.getPoiAround({
