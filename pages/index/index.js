@@ -3,7 +3,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        userInfo:'',
+        userInfo: "",
         disabled: true,
     },
 
@@ -57,8 +57,48 @@ Page({
      */
     onShareAppMessage: function () { },
 
-    bindGetUserInfo:function(e){
-        console.log('bindGetUserInfo', e);
-    },
+    // bindGetUserInfo:function(e){
+    //     console.log('bindGetUserInfo', e);
+    // },
 
+    login() {
+        let that = this;
+        console.log("尝试登录");
+        wx.getUserProfile({
+            desc: "必须授权才能使用",
+            success: (res) => {
+                let user = res.userInfo;
+                wx.setStorageSync("user", user);
+                console.log("登录成功", res);
+
+                that.userInfo = user;
+
+                if (user) {
+                    wx.navigateTo({
+                        url: '../homePage/homePage',
+                    })
+                }
+                wx.showToast({
+                    icon: 'success',
+                    title: '登录成功',
+                });
+
+                console.log(that.userInfo);
+            },
+
+            fail: (res) => {
+                console.log("失败", res);
+                wx.showToast({
+                    icon: 'error',
+                    title: '授权失败',
+                });
+            },
+
+
+        });
+
+
+
+
+    },
 });
