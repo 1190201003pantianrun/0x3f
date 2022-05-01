@@ -3,6 +3,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        userInfo:'',
         disabled: true,
     },
 
@@ -12,7 +13,7 @@ Page({
         });
     },
 
-    radioChange: function (res) {
+    radioChange: function () {
         this.setDisabled();
     },
 
@@ -55,4 +56,9 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () { },
+
+    bindGetUserInfo:function(e){
+        console.log('bindGetUserInfo', e);
+    },
+
 });
