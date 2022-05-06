@@ -1,0 +1,3 @@
+<van-sidebar v-model="activeKey">
+  <van-sidebar-item v-for="(item,id) in users" :key="item.id" :title="item.name" />
+</van-sidebar>
