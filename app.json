@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/selectDepartment/selectDepartment",
     "pages/index/index",
     "pages/mydatabase/mydatabase",
     "pages/homePage/homePage"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
