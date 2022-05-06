@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/selectDepartment/selectDepartment",
     "pages/index/index",
+    "pages/selectDepartment/selectDepartment",
     "pages/mydatabase/mydatabase",
     "pages/homePage/homePage"
     
