@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/selectDepartment/selectDepartment",
+    "pages/index/index",
     "pages/mydatabase/mydatabase",
     "pages/homePage/homePage"
     
@@ -12,6 +12,6 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
   "sitemapLocation": "sitemap.json"
 }
