@@ -5,7 +5,6 @@ Page({
     data: {
         userInfo: "",
         disabled: true,
-        user_id:''
     },
 
     setDisabled() {
@@ -67,54 +66,40 @@ Page({
         console.log("尝试登录");
 
 
-        // wx.getUserProfile({
-        //     desc: "必须授权才能使用",
-        //     success: (res) => {
-        //         let user = res.userInfo;
-        //         wx.setStorageSync("user", user);
-        //         console.log("登录成功", res);
+        wx.getUserProfile({
+            desc: "必须授权才能使用",
+            success: (res) => {
+                let user = res.userInfo;
+                wx.setStorageSync("user", user);
 
-        //         that.userInfo = user;
+                that.userInfo = user;
 
-        //         if (user) {
-        //             wx.navigateTo({
-        //                 url: '../homePage/homePage',
-        //             })
-        //         }
-        //         wx.showToast({
-        //             icon: 'success',
-        //             title: '登录成功',
-        //         });
+                console.log("登录成功", that.userInfo);
 
-        //         console.log(that.userInfo);
-        //     },
+                var app = getApp();
+                console.log('hello openid: ', wx.getStorageSync('openid'));    
 
-        //     fail: (res) => {
-        //         console.log("失败", res);
-        //         wx.showToast({
-        //             icon: 'error',
-        //             title: '授权失败',
-        //         });
-        //     },
-        // });
+                wx.showToast({
+                  icon: 'success',
+                  title: '登录成功',
+                });
 
+                if (user) {
+                  wx.navigateTo({
+                      url: '../homePage/homePage',
+                  })
+                }
+            },
 
-        wx.login({
-          success (res) {
-            if (res.code) {
-              //发起网络请求
-              // wx.request({
-              //   url: 'https://example.com/onLogin',
-              //   data: {
-              //     code: res.code
-              //   }
-              // })
-              console.log(res.code);
-            } else {
-              console.log('登录失败！' + res.errMsg)
-            }
-          }
+            fail: (res) => {
+                console.log("失败", res);
+                wx.showToast({
+                    icon: 'error',
+                    title: '授权失败',
+                });
+            },
         });
+
 
 
 
