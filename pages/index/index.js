@@ -86,7 +86,7 @@ Page({
 
                 if (user) {
                   wx.navigateTo({
-                      url: '../homePage/homePage',
+                      url: '../searchhop/searchhop',
                   })
                 }
             },
@@ -99,9 +99,5 @@ Page({
                 });
             },
         });
-
-
-
-
     },
 });
