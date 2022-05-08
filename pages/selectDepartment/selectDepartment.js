@@ -6,38 +6,22 @@ Page({
    */
   data: {
     activeKey: 0,
-    About: [],
-    users: [
-      {
-          "id": 1,
-          "name": "全部"
-      },
-      {
-          "id": 2,
-          "name": "中考真题"
-      },
-      {
-          "id": 3,
-          "name": "化学"
-      },
-      {
-          "id": 4,
-          "name": "英语"
-      }
-  ]
-
+    department: [],
+    hello: 0,
   },
+
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // var baseJS = require("../../common/tools/base");
-    // baseJS.getData("hospital_test", this.getRes);
-    // var list = [2, "hello"];
+    var baseJS = require("../../common/tools/base");
+    baseJS.getData("hospital_test", this.getRes);
+    // var list = ["神经科"];
     // baseJS.addData("hospital_test", list);
-    // baseJS.getData("goods", this.getRes)
-    console.log(this.data.users)
+    // baseJS.getData("hospital_test", this.getRes)
+    // console.log(this.data.users)
 
   },
 
@@ -46,9 +30,21 @@ Page({
  getRes(res) {
   console.log("你好", res);
   this.setData({
-    About: res.data
+    department: res.data,
+    hello:9999
+
   })
-  console.log(this.data.About)
-}
+
+  console.log("department", this.data.department)
+  // console.log(this.data.department[0])
+  // console.log(this.data.department[0].name)
+  // console.log(this.data.department[1])
+},
+
+
+onChange(event) {
+  // this.data.hello = this.data.hello + 1;
+  // console.log("hello", this.data.hello);
+},
 
 })

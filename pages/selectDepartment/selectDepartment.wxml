@@ -1,3 +1,10 @@
-<van-sidebar v-model="activeKey">
-  <van-sidebar-item v-for="(item,id) in users" :key="item.id" :title="item.name" />
+<van-sidebar v-model="activeKey" bind:change="onChange">
+  <!-- <van-sidebar-item :title="hello" /> -->
+  <!-- <h1>{{hello}}</h1> -->
+  <!-- <h1>{{department[0].name}}</h1> -->
+  <van-sidebar-item title="{{item.name}}"  wx:for="{{department}}" />
+  <!-- <van-sidebar-item title= "{{department[0].name}}" /> -->
+  <!-- <van-sidebar-item title="sb" />
+  <van-sidebar-item title="3" /> 
+  <van-sidebar-item title="2" /> -->
 </van-sidebar>
