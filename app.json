@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/selectDepartment/selectDepartment",
     "pages/index/index",
     "pages/mydatabase/mydatabase",
     "pages/homePage/homePage",
-    "pages/selectDepartment/selectDepartment",
     "pages/searchhop/searchhop",
     "pages/searchloc/searchloc"
     

@@ -1,10 +1,19 @@
-<van-sidebar v-model="activeKey" bind:change="onChange">
-  <!-- <van-sidebar-item :title="hello" /> -->
-  <!-- <h1>{{hello}}</h1> -->
-  <!-- <h1>{{department[0].name}}</h1> -->
-  <van-sidebar-item title="{{item.name}}"  wx:for="{{department}}" />
-  <!-- <van-sidebar-item title= "{{department[0].name}}" /> -->
-  <!-- <van-sidebar-item title="sb" />
-  <van-sidebar-item title="3" /> 
-  <van-sidebar-item title="2" /> -->
-</van-sidebar>
+<view class="container">
+  
+  <view class="nav_left_items">
+    <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+    <van-sidebar-item title="{{item.name}}"  wx:for="{{department}}" />
+    </van-sidebar>
+  </view>
+  
+
+  <view wx:if="{{activeKey > 0}}">
+    <block wx:for="{{doctors}}" wx:key="{{index}}">
+      <view class="nav_right_items">
+        {{doctors.name}}
+      </view>
+    </block>
+  </view>
+
+</view>
+
