@@ -3,4 +3,6 @@
 ### /common/tools/base.js为编写的基础访问数据库代码
 ### 使用样例在/pages/mydatabase/mydatabase.js中
 ### 新增了添加函数，更新和删除需要用到id，因此在给出接口要求后再专门编写
+
+## ghy提交
 ### 增加了地图界面
