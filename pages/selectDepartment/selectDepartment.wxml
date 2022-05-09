@@ -6,14 +6,15 @@
     </van-sidebar>
   </view>
   
-
-  <view wx:if="{{activeKey > 0}}">
-    <block wx:for="{{doctors}}" wx:key="{{index}}">
-      <view class="nav_right_items">
-        {{doctors.name}}
-      </view>
+  <view class="nav_right_items">
+  <view wx:if="{{activeKey >= 0}}">
+    <block wx:for="{{doctors}}">
+        <view>
+          {{item.firstName}}
+        </view>
+        
     </block>
   </view>
-
+  </view>
 </view>
 

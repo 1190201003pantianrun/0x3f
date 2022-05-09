@@ -12,4 +12,10 @@
   position:absolute;
   top:0;
   left:0;
+  overflow: scroll;
+}
+
+.nav_right_items{
+  overflow: scroll;
+  background-color: #FFFFFF;
 }
